@@ -28,7 +28,7 @@ async def on_message(message):
         await client.send_message(message.channel, '{0}, {1}'.format(message.author.mention, get_insult()))
 
     if "shakespeare-inv" in message.content:
-        await client.send_message(message.author, 'Here is [thou] linkith to thy acceptance thy bastard: https://discordapp.com/oauth2/authorize?client_id=238261917796401152&scope=bot')
+        await client.send_message(message.author, 'Here is [thou] linkith to thy acceptance thy bastard: https://discordapp.com/oauth2/authorize?client_id=284664648215691264&scope=bot')
 
 
 client.run('token')
