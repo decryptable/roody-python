@@ -1,5 +1,5 @@
 # Shakespeare -- Python Port
-A conversion of the "Roody" bot from Go to Python 3.5
+A clone of, a now defunct insult bot, "Roody" which insults you.
 
 ## Installation
 
