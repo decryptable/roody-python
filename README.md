@@ -1,4 +1,4 @@
-# Roody -- Python Port
+# Shakespeare -- Python Port
 A conversion of the "Roody" bot from Go to Python 3.5
 
 ## Installation
