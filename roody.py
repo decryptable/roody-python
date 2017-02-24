@@ -9,10 +9,10 @@ import asyncio
 client = discord.Client()
 
 def get_insult():
-    sock = urllib.request.urlopen('http://insultgenerator.org')
+    sock = urllib.request.urlopen('http://www.pangloss.com/seidel/Shaker/')
     html = sock.read()
     soup = bs4.BeautifulSoup(html, 'html.parser')
-    for insult_str in soup.find_all('div', {'class': 'wrap'}):
+    for insult_str in soup.find_all('font'):
         insult = insult_str.get_text()
         insult = insult.replace('\n', '').replace('\r', '')
         return (insult)
@@ -20,15 +20,15 @@ def get_insult():
 @client.event
 async def on_ready():
     print ('Logged on as: {0}'.format(client.user))
-    await client.change_status(game=discord.Game(name='Say "roody-inv" for invite link'))
+    await client.change_presence(game=discord.Game(name='Say "shakespeare-inv" for invite link'))
 
 @client.event
 async def on_message(message):
     if client.user.mention in message.content:
         await client.send_message(message.channel, '{0}, {1}'.format(message.author.mention, get_insult()))
 
-    if "roody-inv" in message.content:
-        await client.send_message(message.author, 'What the fuck? Trying to add me to your shitty server. Well here is the link: https://discordapp.com/oauth2/authorize?client_id=238261917796401152&scope=bot')
+    if "shakespeare-inv" in message.content:
+        await client.send_message(message.author, 'Here is [thou] linkith to thy acceptance thy bastard: https://discordapp.com/oauth2/authorize?client_id=238261917796401152&scope=bot')
 
 
 client.run('token')
